@@ -1,1 +1,1 @@
-# smFISH_quantification
+# How to run 
