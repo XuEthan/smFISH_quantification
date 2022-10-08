@@ -39,7 +39,7 @@ from scipy import stats
 
 
 import torch, detectron2
-get_ipython().system('nvcc --version')
+#get_ipython().system('nvcc --version')
 TORCH_VERSION = ".".join(torch.__version__.split(".")[:2])
 CUDA_VERSION = torch.__version__.split("+")[-1]
 print("torch: ", TORCH_VERSION, "; cuda: ", CUDA_VERSION)
@@ -612,8 +612,10 @@ def display_mosaic(dax_folder, scanpy_file, spots_folder, vmax=10, vmin=0, afov=
 
 # In[51]:
 
+def main():
+    pass
 
-
+'''
 sg.theme("LightGray")
 def main():
     font = ("Arial", 16, "bold")
@@ -806,6 +808,8 @@ def main():
                 print(e)
 
     window.close()
+'''
+
 if __name__ == "__main__":
     main()
 
