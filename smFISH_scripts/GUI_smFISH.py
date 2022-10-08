@@ -614,6 +614,23 @@ def display_mosaic(dax_folder, scanpy_file, spots_folder, vmax=10, vmin=0, afov=
 
 def main():
     pass
+'''
+    calculate_spots(values["-Segmentation-"], values["-FOLDER-"], values["-HybRound-"], values["-Flatfields-"], values["-MERFISH-"], values["-Drifts-"], values["-SPOTS-"])
+    	values["-Segmentation-"]
+            sg.FolderBrowse(initial_folder="/storage/RNA_MERFISH/Segmentation"),
+	values["-FOLDER-"], 
+            sg.FolderBrowse(initial_folder="/mnt/merfish4v1/RNA_MERFISH/MERlin_Data/E20220820_R0110_N2S11AcrySeq"),
+	values["-HybRound-"], 
+            sg.Text("Hyb Round Number i.e. 3"),
+	values["-Flatfields-"], 
+            sg.FolderBrowse(initial_folder="/home/ecxu/smFISH_parameters/flatfields"),
+	values["-MERFISH-"], 
+            sg.FolderBrowse(initial_folder="/mnt/merfish4v1/RNA_MERFISH/MERlin_Data/E20220820_R0110_N2S11AcrySeq"),
+	values["-Drifts-"], 
+            sg.FolderBrowse(initial_folder="/home/ecxu/smFISH_parameters/drifts"),
+	values["-SPOTS-"])
+            sg.FolderBrowse(initial_folder="/home/ecxu/smFISH_parameters/spot_count"),
+'''
 
 '''
 sg.theme("LightGray")
