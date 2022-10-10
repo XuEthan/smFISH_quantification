@@ -613,15 +613,16 @@ def display_mosaic(dax_folder, scanpy_file, spots_folder, vmax=10, vmin=0, afov=
 # In[51]:
 
 def main():
-    seg="example/Segmentation"
-    folder="example/Segmentation/E20220820_R0110_N2S11AcrySeq"
-    hybround=3
+    seg="example/Segmentation/E20220820_R0110_N2S11AcrySeq"
+    folder="example/MERlin_Data/E20220820_R0110_N2S11AcrySeq"
+    hybround="0"
     flatfields="example/flatfields"
     merfish="example/MERlin_Data/E20220820_R0110_N2S11AcrySeq"
     drifts="example/drifts"
     spots="example/spot_count"
     calculate_spots(seg, folder, hybround, flatfields, merfish, drifts, spots)
     pass
+
 '''
     calculate_spots(values["-Segmentation-"], values["-FOLDER-"], values["-HybRound-"], values["-Flatfields-"], values["-MERFISH-"], values["-Drifts-"], values["-SPOTS-"])
     	values["-Segmentation-"]
