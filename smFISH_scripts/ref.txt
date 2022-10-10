@@ -31,3 +31,5 @@ mv 1JrJyEKgIJATQUQn0Zx4fPL_h0YhzpKTv\?usp\=sharing model_final.pth
 mkdir output
 mv model_final.pth output/.
 python smFISH_scripts/GUI_smFISH.py 
+
+http://renlab.sdsc.edu/bil022/smFISH/example.tgz
