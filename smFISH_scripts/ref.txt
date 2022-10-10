@@ -1,0 +1,22 @@
+pip install pipreqs
+pipreqs .
+(base) Bins-MacBook-Air-M1:smFISH_scripts bli$ cat requirements.txt 
+detectron2==0.6
+matplotlib==3.5.1
+numpy==1.21.0
+opencv_python==4.6.0.66
+pandas==1.4.2
+Pillow==9.2.0
+scanpy==1.9.1
+scikit_learn==1.1.2
+scipy==1.7.3
+torch==1.12.1
+tqdm==4.64.0
+
+durian:
+conda create --name smFISH
+conda activate smFISH
+sudo apt-get install pybind11-dev 
+python -m pip install 'git+https://github.com/facebookresearch/detectron2.git'
+pip install -r requirements.txt 
+python smFISH_scripts/GUI_smFISH.py 
