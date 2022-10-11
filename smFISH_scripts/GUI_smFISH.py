@@ -408,7 +408,10 @@ def calculate_spots(segmentation_folder, smFISH_images_folder, hyb_round, flatfi
     cfg.MODEL.ROI_HEADS.NUM_CLASSES = 1
     cfg.MODEL.WEIGHTS = os.path.join(cfg.OUTPUT_DIR, "model_final.pth")
     #set value of confidence threshold
-    cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.3 
+    cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.3
+    if not torch.cuda.is_available():
+        cfg.MODEL.DEVICE = "cpu"
+    print(cfg.MODEL.DEVICE)
     predictor = DefaultPredictor(cfg)
     
     #load segmentation and files
