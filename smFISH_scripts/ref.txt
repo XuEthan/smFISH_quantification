@@ -20,3 +20,16 @@ sudo apt-get install pybind11-dev
 python -m pip install 'git+https://github.com/facebookresearch/detectron2.git'
 pip install -r requirements.txt 
 python smFISH_scripts/GUI_smFISH.py 
+
+
+conda install pytorch torchvision torchaudio cudatoolkit=11.6 -c pytorch -c conda-forge
+python -m pip install -e detectron2
+pip install opencv-python
+
+wget "https://drive.google.com/drive/folders/1JrJyEKgIJATQUQn0Zx4fPL_h0YhzpKTv?usp=sharing"
+mv 1JrJyEKgIJATQUQn0Zx4fPL_h0YhzpKTv\?usp\=sharing model_final.pth
+mkdir output
+mv model_final.pth output/.
+python smFISH_scripts/GUI_smFISH.py 
+
+http://renlab.sdsc.edu/bil022/smFISH/example.tgz

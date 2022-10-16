@@ -408,7 +408,10 @@ def calculate_spots(segmentation_folder, smFISH_images_folder, hyb_round, flatfi
     cfg.MODEL.ROI_HEADS.NUM_CLASSES = 1
     cfg.MODEL.WEIGHTS = os.path.join(cfg.OUTPUT_DIR, "model_final.pth")
     #set value of confidence threshold
-    cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.3 
+    cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.3
+    if not torch.cuda.is_available():
+        cfg.MODEL.DEVICE = "cpu"
+    print(cfg.MODEL.DEVICE)
     predictor = DefaultPredictor(cfg)
     
     #load segmentation and files
@@ -613,7 +616,16 @@ def display_mosaic(dax_folder, scanpy_file, spots_folder, vmax=10, vmin=0, afov=
 # In[51]:
 
 def main():
+    seg="example/Segmentation/E20220820_R0110_N2S11AcrySeq"
+    folder="example/MERlin_Data/E20220820_R0110_N2S11AcrySeq"
+    hybround="0"
+    flatfields="example/flatfields"
+    merfish="example/MERlin_Data/E20220820_R0110_N2S11AcrySeq"
+    drifts="example/drifts"
+    spots="example/spot_count"
+    calculate_spots(seg, folder, hybround, flatfields, merfish, drifts, spots)
     pass
+
 '''
     calculate_spots(values["-Segmentation-"], values["-FOLDER-"], values["-HybRound-"], values["-Flatfields-"], values["-MERFISH-"], values["-Drifts-"], values["-SPOTS-"])
     	values["-Segmentation-"]
