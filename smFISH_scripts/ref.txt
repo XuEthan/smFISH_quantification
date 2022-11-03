@@ -33,3 +33,14 @@ mv model_final.pth output/.
 python smFISH_scripts/GUI_smFISH.py 
 
 http://renlab.sdsc.edu/bil022/smFISH/example.tgz
+
+silencer
+scl enable devtoolset-11 bash
+#conda create -n detectron2 python=3.8
+conda activate detectron2
+pip3.8 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cpu
+pip3.8 install cython
+pip3.8 install opencv-python
+pip3.8 install scipy
+pip3.8 install pandas
+pip3.8 install scanpy
